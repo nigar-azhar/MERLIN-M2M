@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<myClass>
+    <actions>
+        <key>space</key>
+        <name>flap</name>
+        <timeelapsed>0.33</timeelapsed>
+    </actions>
+    <actions>
+        <key>null</key>
+        <name>doNothing</name>
+        <timeelapsed>0.1</timeelapsed>
+    </actions>
+    <name>FlappyBird</name>
+</myClass>

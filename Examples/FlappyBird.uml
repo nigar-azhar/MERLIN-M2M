@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:PlatformGameTestingProfile="http:///schemas/PlatformGameTestingProfile/_RnXP0I2LEe2tl7pg5zDrrQ/4" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 Default.profile.uml#_Qkjz1I2aEe2tl7pg5zDrrQ http:///schemas/PlatformGameTestingProfile/_RnXP0I2LEe2tl7pg5zDrrQ/4 Profile.profile.uml#_Qkkao42aEe2tl7pg5zDrrQ">
+  <uml:Package xmi:id="_QkjKrY2aEe2tl7pg5zDrrQ" name="FlappyBird">
+    <packageImport xmi:id="_QkjKro2aEe2tl7pg5zDrrQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkjKr42aEe2tl7pg5zDrrQ" name="FlappyBirdGame">
+      <eAnnotations xmi:id="_QkjKsI2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedAttribute xmi:id="_QkjKsY2aEe2tl7pg5zDrrQ" name="topPipe" visibility="private" type="_Qkjxco2aEe2tl7pg5zDrrQ" association="_Qkjxc42aEe2tl7pg5zDrrQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkjKso2aEe2tl7pg5zDrrQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkjKs42aEe2tl7pg5zDrrQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_QkjKtI2aEe2tl7pg5zDrrQ" name="bottomPipe" visibility="private" type="_QkjxcY2aEe2tl7pg5zDrrQ" association="_Qkjxd42aEe2tl7pg5zDrrQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkjKtY2aEe2tl7pg5zDrrQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkjKto2aEe2tl7pg5zDrrQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_QkjKt42aEe2tl7pg5zDrrQ" name="flappyBird" visibility="private" type="_Qkjxbo2aEe2tl7pg5zDrrQ" association="_Qkjxe42aEe2tl7pg5zDrrQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkjKuI2aEe2tl7pg5zDrrQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkjKuY2aEe2tl7pg5zDrrQ" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_QkjKuo2aEe2tl7pg5zDrrQ" name="Flappy-bird">
+        <ownedRule xmi:id="_QkjKu42aEe2tl7pg5zDrrQ" name="const" constrainedElement="_QkjKv42aEe2tl7pg5zDrrQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjKvI2aEe2tl7pg5zDrrQ">
+            <language>OCL</language>
+            <body>self.</body>
+          </specification>
+        </ownedRule>
+        <region xmi:id="_QkjKvY2aEe2tl7pg5zDrrQ" name="Region1">
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_QkjKvo2aEe2tl7pg5zDrrQ" name="init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_QkjKv42aEe2tl7pg5zDrrQ" name="bird-inline-with-gap">
+            <eAnnotations xmi:id="_QkjKwI2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_QkjKwY2aEe2tl7pg5zDrrQ" key="good"/>
+            </eAnnotations>
+            <ownedRule xmi:id="_QkjKwo2aEe2tl7pg5zDrrQ" name="state-invariant" constrainedElement="_QkjKv42aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjKw42aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>(flappyBird.yCoordinate > topPipe.yCoordinate) and (flappyBird.yCoordinate &lt; bottomPipe.yCoordinate)</body>
+              </specification>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_QkjKxI2aEe2tl7pg5zDrrQ" name="bird-inline-with-top-pipe">
+            <eAnnotations xmi:id="_QkjKxY2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_QkjKxo2aEe2tl7pg5zDrrQ" key="bad"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_QkjKx42aEe2tl7pg5zDrrQ" name="bird-inline-with-bottom-pipe">
+            <eAnnotations xmi:id="_QkjKyI2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_QkjKyY2aEe2tl7pg5zDrrQ" key="bad"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_QkjKyo2aEe2tl7pg5zDrrQ" name="bird-touch-top-border">
+            <eAnnotations xmi:id="_QkjKy42aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_QkjKzI2aEe2tl7pg5zDrrQ" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_QkjKzY2aEe2tl7pg5zDrrQ" name="bird-touch-bottom-pipe">
+            <eAnnotations xmi:id="_QkjKzo2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_QkjKz42aEe2tl7pg5zDrrQ" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_QkjK0I2aEe2tl7pg5zDrrQ" name="bird-touch-top-pipe">
+            <eAnnotations xmi:id="_QkjK0Y2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_QkjK0o2aEe2tl7pg5zDrrQ" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_QkjK042aEe2tl7pg5zDrrQ" name="bird-touch-bottom-border">
+            <eAnnotations xmi:id="_QkjK1I2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_QkjK1Y2aEe2tl7pg5zDrrQ" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_QkjK1o2aEe2tl7pg5zDrrQ" kind="choice" name="init-choice"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_QkjK142aEe2tl7pg5zDrrQ" name="final"/>
+          <transition xmi:id="_QkjK2I2aEe2tl7pg5zDrrQ" source="_QkjKvo2aEe2tl7pg5zDrrQ" target="_QkjK1o2aEe2tl7pg5zDrrQ"/>
+          <transition xmi:id="_QkjK2Y2aEe2tl7pg5zDrrQ" source="_QkjK1o2aEe2tl7pg5zDrrQ" target="_QkjKxI2aEe2tl7pg5zDrrQ" guard="_QkjK2o2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjK2o2aEe2tl7pg5zDrrQ" constrainedElement="_QkjK2Y2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjK242aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 20)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjK3I2aEe2tl7pg5zDrrQ" source="_QkjK1o2aEe2tl7pg5zDrrQ" target="_QkjKv42aEe2tl7pg5zDrrQ" guard="_QkjK3Y2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjK3Y2aEe2tl7pg5zDrrQ" constrainedElement="_QkjK3I2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxMI2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate > topPipe.yCoordinate &amp;&amp; flappyBird.yCoordinate &lt; bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxMY2aEe2tl7pg5zDrrQ" source="_QkjK1o2aEe2tl7pg5zDrrQ" target="_QkjKx42aEe2tl7pg5zDrrQ" guard="_QkjxMo2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxMo2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxMY2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxM42aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate > bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxNI2aEe2tl7pg5zDrrQ" name="doNothing()" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjKv42aEe2tl7pg5zDrrQ" guard="_QkjxNY2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxNY2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxNI2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxNo2aEe2tl7pg5zDrrQ">
+                <language>Analysis</language>
+                <body>flappyBird.yCoordinate &lt; (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxN42aEe2tl7pg5zDrrQ" name="flap()" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjKv42aEe2tl7pg5zDrrQ" guard="_QkjxOI2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxOI2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxN42aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxOY2aEe2tl7pg5zDrrQ">
+                <language>Analysis</language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxOo2aEe2tl7pg5zDrrQ" name="flap()" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjKxI2aEe2tl7pg5zDrrQ" guard="_QkjxO42aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxO42aEe2tl7pg5zDrrQ" constrainedElement="_QkjxOo2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxPI2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 100)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxPY2aEe2tl7pg5zDrrQ" name="doNothing()" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjKx42aEe2tl7pg5zDrrQ" guard="_QkjxPo2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxPo2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxPY2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxP42aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxQI2aEe2tl7pg5zDrrQ" name="flap()" source="_QkjKxI2aEe2tl7pg5zDrrQ" target="_QkjKyo2aEe2tl7pg5zDrrQ" guard="_QkjxQY2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxQY2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxQI2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxQo2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt;= 50</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxQ42aEe2tl7pg5zDrrQ" name="flap()" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjKyo2aEe2tl7pg5zDrrQ" guard="_QkjxRI2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxRI2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxQ42aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxRY2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt;= 50</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxRo2aEe2tl7pg5zDrrQ" name="doNothing()" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjK042aEe2tl7pg5zDrrQ" guard="_QkjxR42aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxR42aEe2tl7pg5zDrrQ" constrainedElement="_QkjxRo2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxSI2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate >= 700</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxSY2aEe2tl7pg5zDrrQ" name="doNothing()" source="_QkjKx42aEe2tl7pg5zDrrQ" target="_QkjK042aEe2tl7pg5zDrrQ" guard="_QkjxSo2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxSo2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxSY2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxS42aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate >= 700</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxTI2aEe2tl7pg5zDrrQ" name="flap()" source="_QkjKx42aEe2tl7pg5zDrrQ" target="_QkjKv42aEe2tl7pg5zDrrQ" guard="_QkjxTY2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxTY2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxTI2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxTo2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate > topPipe.yCoordinate &amp;&amp; flappyBird.yCoordinate &lt; bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxT42aEe2tl7pg5zDrrQ" name="doNothing()" source="_QkjKxI2aEe2tl7pg5zDrrQ" target="_QkjKv42aEe2tl7pg5zDrrQ" guard="_QkjxUI2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxUI2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxT42aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxUY2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate > topPipe.yCoordinate &amp;&amp; flappyBird.yCoordinate &lt; bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxUo2aEe2tl7pg5zDrrQ" name="flap()" source="_QkjKxI2aEe2tl7pg5zDrrQ" target="_QkjKxI2aEe2tl7pg5zDrrQ" guard="_QkjxU42aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxU42aEe2tl7pg5zDrrQ" constrainedElement="_QkjxUo2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxVI2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 100)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxVY2aEe2tl7pg5zDrrQ" source="_QkjKxI2aEe2tl7pg5zDrrQ" target="_QkjK0I2aEe2tl7pg5zDrrQ" guard="_QkjxVo2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxVo2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxVY2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxV42aEe2tl7pg5zDrrQ">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (topPipe.xCoordinate - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (topPipe.xCoordinate + 100) ) &amp;&amp; (flappyBird.yCoordinate &lt;= topPipe.yCoordinate + 50)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxWI2aEe2tl7pg5zDrrQ" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjK0I2aEe2tl7pg5zDrrQ" guard="_QkjxWY2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxWY2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxWI2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxWo2aEe2tl7pg5zDrrQ">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (topPipe.xCoordinate - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (topPipe.xCoordinate + 100) ) &amp;&amp; (flappyBird.yCoordinate &lt;= topPipe.yCoordinate + 50)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxW42aEe2tl7pg5zDrrQ" source="_QkjKx42aEe2tl7pg5zDrrQ" target="_QkjKzY2aEe2tl7pg5zDrrQ" guard="_QkjxXI2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxXI2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxW42aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxXY2aEe2tl7pg5zDrrQ">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (bottomPipeX - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (bottomPipeX + 100) ) &amp;&amp; (flappyBird.yCoordinate >= bottomPipe.yCoordinate + 5)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxXo2aEe2tl7pg5zDrrQ" source="_QkjKv42aEe2tl7pg5zDrrQ" target="_QkjKzY2aEe2tl7pg5zDrrQ" guard="_QkjxX42aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxX42aEe2tl7pg5zDrrQ" constrainedElement="_QkjxXo2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxYI2aEe2tl7pg5zDrrQ">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (bottomPipeX - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (bottomPipeX + 100) ) &amp;&amp; (flappyBird.yCoordinate >= bottomPipe.yCoordinate + 5)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxYY2aEe2tl7pg5zDrrQ" source="_QkjK0I2aEe2tl7pg5zDrrQ" target="_QkjK142aEe2tl7pg5zDrrQ"/>
+          <transition xmi:id="_QkjxYo2aEe2tl7pg5zDrrQ" source="_QkjKyo2aEe2tl7pg5zDrrQ" target="_QkjK142aEe2tl7pg5zDrrQ"/>
+          <transition xmi:id="_QkjxY42aEe2tl7pg5zDrrQ" source="_QkjKzY2aEe2tl7pg5zDrrQ" target="_QkjK142aEe2tl7pg5zDrrQ"/>
+          <transition xmi:id="_QkjxZI2aEe2tl7pg5zDrrQ" source="_QkjK042aEe2tl7pg5zDrrQ" target="_QkjK142aEe2tl7pg5zDrrQ"/>
+          <transition xmi:id="_QkjxZY2aEe2tl7pg5zDrrQ" name="doNothing()" source="_QkjKxI2aEe2tl7pg5zDrrQ" target="_QkjKxI2aEe2tl7pg5zDrrQ" guard="_QkjxZo2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxZo2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxZY2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxZ42aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 100)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_QkjxaI2aEe2tl7pg5zDrrQ" name="doNothing()" source="_QkjKx42aEe2tl7pg5zDrrQ" target="_QkjKx42aEe2tl7pg5zDrrQ" guard="_QkjxaY2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxaY2aEe2tl7pg5zDrrQ" constrainedElement="_QkjxaI2aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_Qkjxao2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_Qkjxa42aEe2tl7pg5zDrrQ" name="flap()" source="_QkjKx42aEe2tl7pg5zDrrQ" target="_QkjKx42aEe2tl7pg5zDrrQ" guard="_QkjxbI2aEe2tl7pg5zDrrQ">
+            <ownedRule xmi:id="_QkjxbI2aEe2tl7pg5zDrrQ" constrainedElement="_Qkjxa42aEe2tl7pg5zDrrQ">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QkjxbY2aEe2tl7pg5zDrrQ">
+                <language></language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Qkjxbo2aEe2tl7pg5zDrrQ" name="FlappyBird">
+      <ownedOperation xmi:id="_Qkjxb42aEe2tl7pg5zDrrQ" name="flap"/>
+      <ownedOperation xmi:id="_QkjxcI2aEe2tl7pg5zDrrQ" name="doNothing"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkjxcY2aEe2tl7pg5zDrrQ" name="UpFacePipe"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Qkjxco2aEe2tl7pg5zDrrQ" name="DownFacePipe"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Qkjxc42aEe2tl7pg5zDrrQ" memberEnd="_QkjKsY2aEe2tl7pg5zDrrQ _QkjxdI2aEe2tl7pg5zDrrQ">
+      <ownedEnd xmi:id="_QkjxdI2aEe2tl7pg5zDrrQ" name="game" visibility="private" type="_QkjKr42aEe2tl7pg5zDrrQ" association="_Qkjxc42aEe2tl7pg5zDrrQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkjxdY2aEe2tl7pg5zDrrQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qkjxdo2aEe2tl7pg5zDrrQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Qkjxd42aEe2tl7pg5zDrrQ" memberEnd="_QkjKtI2aEe2tl7pg5zDrrQ _QkjxeI2aEe2tl7pg5zDrrQ">
+      <ownedEnd xmi:id="_QkjxeI2aEe2tl7pg5zDrrQ" name="game" visibility="private" type="_QkjKr42aEe2tl7pg5zDrrQ" association="_Qkjxd42aEe2tl7pg5zDrrQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkjxeY2aEe2tl7pg5zDrrQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qkjxeo2aEe2tl7pg5zDrrQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Qkjxe42aEe2tl7pg5zDrrQ" memberEnd="_QkjKt42aEe2tl7pg5zDrrQ _QkjxfI2aEe2tl7pg5zDrrQ">
+      <ownedEnd xmi:id="_QkjxfI2aEe2tl7pg5zDrrQ" name="game" visibility="private" type="_QkjKr42aEe2tl7pg5zDrrQ" association="_Qkjxe42aEe2tl7pg5zDrrQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkjxfY2aEe2tl7pg5zDrrQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qkjxfo2aEe2tl7pg5zDrrQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:id="_Qkjxf42aEe2tl7pg5zDrrQ">
+      <eAnnotations xmi:id="_QkjxgI2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_QkjxgY2aEe2tl7pg5zDrrQ">
+      <eAnnotations xmi:id="_Qkjxgo2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Default.profile.uml#_Qkjz1I2aEe2tl7pg5zDrrQ"/>
+      </eAnnotations>
+      <appliedProfile href="Default.profile.uml#_Qkjz0o2aEe2tl7pg5zDrrQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_Qkjxg42aEe2tl7pg5zDrrQ">
+      <eAnnotations xmi:id="_QkjxhI2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Deployment.profile.uml#_QklDFo2aEe2tl7pg5zDrrQ"/>
+      </eAnnotations>
+      <appliedProfile href="Deployment.profile.uml#_QklDFI2aEe2tl7pg5zDrrQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_QkjxhY2aEe2tl7pg5zDrrQ">
+      <eAnnotations xmi:id="_Qkjxho2aEe2tl7pg5zDrrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Profile.profile.uml#_Qkkao42aEe2tl7pg5zDrrQ"/>
+      </eAnnotations>
+      <appliedProfile href="Profile.profile.uml#_QkkaoY2aEe2tl7pg5zDrrQ"/>
+    </profileApplication>
+  </uml:Package>
+  <Default:MetaConstraint xmi:id="_Qkjxh42aEe2tl7pg5zDrrQ" base_Constraint="_QkjKu42aEe2tl7pg5zDrrQ"/>
+  <PlatformGameTestingProfile:Game xmi:id="_QkjxiI2aEe2tl7pg5zDrrQ" base_Class="_QkjKr42aEe2tl7pg5zDrrQ"/>
+  <PlatformGameTestingProfile:DangerousObstacle xmi:id="_QkjxiY2aEe2tl7pg5zDrrQ" base_Class="_Qkjxco2aEe2tl7pg5zDrrQ"/>
+  <PlatformGameTestingProfile:DangerousObstacle xmi:id="_Qkjxio2aEe2tl7pg5zDrrQ" base_Class="_QkjxcY2aEe2tl7pg5zDrrQ"/>
+  <PlatformGameTestingProfile:Avatar xmi:id="_Qkjxi42aEe2tl7pg5zDrrQ" base_Class="_Qkjxbo2aEe2tl7pg5zDrrQ"/>
+</xmi:XMI>

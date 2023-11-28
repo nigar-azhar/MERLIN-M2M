@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:PlatformGameTestingProfile="http:///schemas/PlatformGameTestingProfile/_RnXP0I2LEe2tl7pg5zDrrQ/4" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 Default.profile.uml#_Qkjz1I2aEe2tl7pg5zDrrQ http:///schemas/PlatformGameTestingProfile/_RnXP0I2LEe2tl7pg5zDrrQ/4 Profile.profile.uml#_Qkkao42aEe2tl7pg5zDrrQ">
+  <uml:Package xmi:id="_B6BWuNnLEe28jPPklIk6cg" name="FlappyBirdGame">
+    <packageImport xmi:id="_B6BWudnLEe28jPPklIk6cg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BWutnLEe28jPPklIk6cg" name="FlappyBirdGame">
+      <eAnnotations xmi:id="_B6BWu9nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedAttribute xmi:id="_B6BWvNnLEe28jPPklIk6cg" name="topPipe" visibility="private" type="_B6BXK9nLEe28jPPklIk6cg" association="_B6BXLNnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BWvdnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BWvtnLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BWv9nLEe28jPPklIk6cg" name="bottomPipe" visibility="private" type="_B6BXKtnLEe28jPPklIk6cg" association="_B6BXMNnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BWwNnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BWwdnLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BWwtnLEe28jPPklIk6cg" name="flappyBird" visibility="private" type="_B6BXJ9nLEe28jPPklIk6cg" association="_B6BXNNnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BWw9nLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BWxNnLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_B6BWxdnLEe28jPPklIk6cg" name="Flappy-bird">
+        <ownedRule xmi:id="_B6BWxtnLEe28jPPklIk6cg" name="const" constrainedElement="_B6BWytnLEe28jPPklIk6cg">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BWx9nLEe28jPPklIk6cg">
+            <language>OCL</language>
+            <body>self.</body>
+          </specification>
+        </ownedRule>
+        <region xmi:id="_B6BWyNnLEe28jPPklIk6cg" name="Region1">
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_B6BWydnLEe28jPPklIk6cg"/>
+          <subvertex xmi:type="uml:State" xmi:id="_B6BWytnLEe28jPPklIk6cg" name="bird-inline-with-gap">
+            <eAnnotations xmi:id="_B6BWy9nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_B6BWzNnLEe28jPPklIk6cg" key="good"/>
+            </eAnnotations>
+            <ownedRule xmi:id="_B6BWzdnLEe28jPPklIk6cg" name="state-invariant" constrainedElement="_B6BWytnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BWztnLEe28jPPklIk6cg">
+                <language></language>
+                <body>(flappyBird.yCoordinate > topPipe.yCoordinate) and (flappyBird.yCoordinate &lt; bottomPipe.yCoordinate)</body>
+              </specification>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_B6BWz9nLEe28jPPklIk6cg" name="bird-inline-with-top-pipe">
+            <eAnnotations xmi:id="_B6BW0NnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_B6BW0dnLEe28jPPklIk6cg" key="bad"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_B6BW0tnLEe28jPPklIk6cg" name="bird-inline-with-bottom-pipe">
+            <eAnnotations xmi:id="_B6BW09nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_B6BW1NnLEe28jPPklIk6cg" key="bad"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_B6BW1dnLEe28jPPklIk6cg" name="bird-touch-top-border">
+            <eAnnotations xmi:id="_B6BW1tnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_B6BW19nLEe28jPPklIk6cg" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_B6BW2NnLEe28jPPklIk6cg" name="bird-touch-bottom-pipe">
+            <eAnnotations xmi:id="_B6BW2dnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_B6BW2tnLEe28jPPklIk6cg" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_B6BW29nLEe28jPPklIk6cg" name="bird-touch-top-pipe">
+            <eAnnotations xmi:id="_B6BW3NnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_B6BW3dnLEe28jPPklIk6cg" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_B6BW3tnLEe28jPPklIk6cg" name="bird-touch-bottom-border">
+            <eAnnotations xmi:id="_B6BW39nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+              <details xmi:id="_B6BW4NnLEe28jPPklIk6cg" key="dead"/>
+            </eAnnotations>
+          </subvertex>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_B6BW4dnLEe28jPPklIk6cg" kind="choice"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_B6BW4tnLEe28jPPklIk6cg"/>
+          <transition xmi:id="_B6BW49nLEe28jPPklIk6cg" source="_B6BWydnLEe28jPPklIk6cg" target="_B6BW4dnLEe28jPPklIk6cg"/>
+          <transition xmi:id="_B6BW5NnLEe28jPPklIk6cg" source="_B6BW4dnLEe28jPPklIk6cg" target="_B6BWz9nLEe28jPPklIk6cg" guard="_B6BW5dnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW5dnLEe28jPPklIk6cg" constrainedElement="_B6BW5NnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW5tnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 20)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW59nLEe28jPPklIk6cg" source="_B6BW4dnLEe28jPPklIk6cg" target="_B6BWytnLEe28jPPklIk6cg" guard="_B6BW6NnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW6NnLEe28jPPklIk6cg" constrainedElement="_B6BW59nLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW6dnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate > topPipe.yCoordinate &amp;&amp; flappyBird.yCoordinate &lt; bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW6tnLEe28jPPklIk6cg" source="_B6BW4dnLEe28jPPklIk6cg" target="_B6BW0tnLEe28jPPklIk6cg" guard="_B6BW69nLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW69nLEe28jPPklIk6cg" constrainedElement="_B6BW6tnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW7NnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate > bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW7dnLEe28jPPklIk6cg" name="doNothing()" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BWytnLEe28jPPklIk6cg" guard="_B6BW7tnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW7tnLEe28jPPklIk6cg" constrainedElement="_B6BW7dnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW79nLEe28jPPklIk6cg">
+                <language>Analysis</language>
+                <body>flappyBird.yCoordinate &lt; (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW8NnLEe28jPPklIk6cg" name="flap()" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BWytnLEe28jPPklIk6cg" guard="_B6BW8dnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW8dnLEe28jPPklIk6cg" constrainedElement="_B6BW8NnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW8tnLEe28jPPklIk6cg">
+                <language>Analysis</language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW89nLEe28jPPklIk6cg" name="flap()" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BWz9nLEe28jPPklIk6cg" guard="_B6BW9NnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW9NnLEe28jPPklIk6cg" constrainedElement="_B6BW89nLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW9dnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 100)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW9tnLEe28jPPklIk6cg" name="doNothing()" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BW0tnLEe28jPPklIk6cg" guard="_B6BW99nLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW99nLEe28jPPklIk6cg" constrainedElement="_B6BW9tnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW-NnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW-dnLEe28jPPklIk6cg" name="flap()" source="_B6BWz9nLEe28jPPklIk6cg" target="_B6BW1dnLEe28jPPklIk6cg" guard="_B6BW-tnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW-tnLEe28jPPklIk6cg" constrainedElement="_B6BW-dnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW-9nLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt;= 50</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW_NnLEe28jPPklIk6cg" name="flap()" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BW1dnLEe28jPPklIk6cg" guard="_B6BW_dnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BW_dnLEe28jPPklIk6cg" constrainedElement="_B6BW_NnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BW_tnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt;= 50</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BW_9nLEe28jPPklIk6cg" name="doNothing()" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BW3tnLEe28jPPklIk6cg" guard="_B6BXANnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXANnLEe28jPPklIk6cg" constrainedElement="_B6BW_9nLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXAdnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate >= 700</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXAtnLEe28jPPklIk6cg" name="doNothing()" source="_B6BW0tnLEe28jPPklIk6cg" target="_B6BW3tnLEe28jPPklIk6cg" guard="_B6BXA9nLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXA9nLEe28jPPklIk6cg" constrainedElement="_B6BXAtnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXBNnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate >= 700</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXBdnLEe28jPPklIk6cg" name="flap()" source="_B6BW0tnLEe28jPPklIk6cg" target="_B6BWytnLEe28jPPklIk6cg" guard="_B6BXBtnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXBtnLEe28jPPklIk6cg" constrainedElement="_B6BXBdnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXB9nLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate > topPipe.yCoordinate &amp;&amp; flappyBird.yCoordinate &lt; bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXCNnLEe28jPPklIk6cg" name="doNothing()" source="_B6BWz9nLEe28jPPklIk6cg" target="_B6BWytnLEe28jPPklIk6cg" guard="_B6BXCdnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXCdnLEe28jPPklIk6cg" constrainedElement="_B6BXCNnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXCtnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate > topPipe.yCoordinate &amp;&amp; flappyBird.yCoordinate &lt; bottomPipe.yCoordinate</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXC9nLEe28jPPklIk6cg" name="flap()" source="_B6BWz9nLEe28jPPklIk6cg" target="_B6BWz9nLEe28jPPklIk6cg" guard="_B6BXDNnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXDNnLEe28jPPklIk6cg" constrainedElement="_B6BXC9nLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXDdnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 100)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXDtnLEe28jPPklIk6cg" source="_B6BWz9nLEe28jPPklIk6cg" target="_B6BW29nLEe28jPPklIk6cg" guard="_B6BXD9nLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXD9nLEe28jPPklIk6cg" constrainedElement="_B6BXDtnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXENnLEe28jPPklIk6cg">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (topPipe.xCoordinate - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (topPipe.xCoordinate + 100) ) &amp;&amp; (flappyBird.yCoordinate &lt;= topPipe.yCoordinate + 50)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXEdnLEe28jPPklIk6cg" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BW29nLEe28jPPklIk6cg" guard="_B6BXEtnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXEtnLEe28jPPklIk6cg" constrainedElement="_B6BXEdnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXE9nLEe28jPPklIk6cg">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (topPipe.xCoordinate - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (topPipe.xCoordinate + 100) ) &amp;&amp; (flappyBird.yCoordinate &lt;= topPipe.yCoordinate + 50)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXFNnLEe28jPPklIk6cg" source="_B6BW0tnLEe28jPPklIk6cg" target="_B6BW2NnLEe28jPPklIk6cg" guard="_B6BXFdnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXFdnLEe28jPPklIk6cg" constrainedElement="_B6BXFNnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXFtnLEe28jPPklIk6cg">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (bottomPipeX - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (bottomPipeX + 100) ) &amp;&amp; (flappyBird.yCoordinate >= bottomPipe.yCoordinate + 5)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXF9nLEe28jPPklIk6cg" source="_B6BWytnLEe28jPPklIk6cg" target="_B6BW2NnLEe28jPPklIk6cg" guard="_B6BXGNnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXGNnLEe28jPPklIk6cg" constrainedElement="_B6BXF9nLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXGdnLEe28jPPklIk6cg">
+                <language>Analysis</language>
+                <body>(flappyBird.xCoordinate >= (bottomPipeX - 10) &amp;&amp; flappyBird.xCoordinate &lt;= (bottomPipeX + 100) ) &amp;&amp; (flappyBird.yCoordinate >= bottomPipe.yCoordinate + 5)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXGtnLEe28jPPklIk6cg" source="_B6BW29nLEe28jPPklIk6cg" target="_B6BW4tnLEe28jPPklIk6cg"/>
+          <transition xmi:id="_B6BXG9nLEe28jPPklIk6cg" source="_B6BW1dnLEe28jPPklIk6cg" target="_B6BW4tnLEe28jPPklIk6cg"/>
+          <transition xmi:id="_B6BXHNnLEe28jPPklIk6cg" source="_B6BW2NnLEe28jPPklIk6cg" target="_B6BW4tnLEe28jPPklIk6cg"/>
+          <transition xmi:id="_B6BXHdnLEe28jPPklIk6cg" source="_B6BW3tnLEe28jPPklIk6cg" target="_B6BW4tnLEe28jPPklIk6cg"/>
+          <transition xmi:id="_B6BXHtnLEe28jPPklIk6cg" name="doNothing()" source="_B6BWz9nLEe28jPPklIk6cg" target="_B6BWz9nLEe28jPPklIk6cg" guard="_B6BXH9nLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXH9nLEe28jPPklIk6cg" constrainedElement="_B6BXHtnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXINnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate &lt; (topPipe.yCoordinate + 100)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXIdnLEe28jPPklIk6cg" name="doNothing()" source="_B6BW0tnLEe28jPPklIk6cg" target="_B6BW0tnLEe28jPPklIk6cg" guard="_B6BXItnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXItnLEe28jPPklIk6cg" constrainedElement="_B6BXIdnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXI9nLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_B6BXJNnLEe28jPPklIk6cg" name="flap()" source="_B6BW0tnLEe28jPPklIk6cg" target="_B6BW0tnLEe28jPPklIk6cg" guard="_B6BXJdnLEe28jPPklIk6cg">
+            <ownedRule xmi:id="_B6BXJdnLEe28jPPklIk6cg" constrainedElement="_B6BXJNnLEe28jPPklIk6cg">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXJtnLEe28jPPklIk6cg">
+                <language></language>
+                <body>flappyBird.yCoordinate >= (bottomPipe.yCoordinate - 30)</body>
+              </specification>
+            </ownedRule>
+          </transition>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXJ9nLEe28jPPklIk6cg" name="FlappyBird">
+      <ownedOperation xmi:id="_B6BXKNnLEe28jPPklIk6cg" name="flap"/>
+      <ownedOperation xmi:id="_B6BXKdnLEe28jPPklIk6cg" name="doNothing"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXKtnLEe28jPPklIk6cg" name="UpFacePipe"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXK9nLEe28jPPklIk6cg" name="DownFacePipe"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BXLNnLEe28jPPklIk6cg" memberEnd="_B6BWvNnLEe28jPPklIk6cg _B6BXLdnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BXLdnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BWutnLEe28jPPklIk6cg" association="_B6BXLNnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXLtnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXL9nLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BXMNnLEe28jPPklIk6cg" memberEnd="_B6BWv9nLEe28jPPklIk6cg _B6BXMdnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BXMdnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BWutnLEe28jPPklIk6cg" association="_B6BXMNnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXMtnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXM9nLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BXNNnLEe28jPPklIk6cg" memberEnd="_B6BWwtnLEe28jPPklIk6cg _B6BXNdnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BXNdnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BWutnLEe28jPPklIk6cg" association="_B6BXNNnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXNtnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXN9nLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXONnLEe28jPPklIk6cg" name="AtariSpaceInvadersGame">
+      <ownedAttribute xmi:id="_B6BXOdnLEe28jPPklIk6cg" name="spaceShip" visibility="private" type="_B6BXSNnLEe28jPPklIk6cg" association="_B6BXT9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXOtnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXO9nLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BXPNnLEe28jPPklIk6cg" name="invaderFire" visibility="private" type="_B6BXR9nLEe28jPPklIk6cg" association="_B6BXU9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXPdnLEe28jPPklIk6cg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXPtnLEe28jPPklIk6cg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BXP9nLEe28jPPklIk6cg" name="shield" visibility="private" type="_B6BXRtnLEe28jPPklIk6cg" association="_B6BXV9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXQNnLEe28jPPklIk6cg" value="3"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXQdnLEe28jPPklIk6cg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BXQtnLEe28jPPklIk6cg" name="invader" visibility="private" type="_B6BXRdnLEe28jPPklIk6cg" association="_B6BXW9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXQ9nLEe28jPPklIk6cg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXRNnLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXRdnLEe28jPPklIk6cg" name="Invader"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXRtnLEe28jPPklIk6cg" name="Shield"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXR9nLEe28jPPklIk6cg" name="InvaderFire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BXSNnLEe28jPPklIk6cg" name="SpaceShip">
+      <ownedOperation xmi:id="_B6BXSdnLEe28jPPklIk6cg" name="noop"/>
+      <ownedOperation xmi:id="_B6BXStnLEe28jPPklIk6cg" name="fire"/>
+      <ownedOperation xmi:id="_B6BXS9nLEe28jPPklIk6cg" name="right"/>
+      <ownedOperation xmi:id="_B6BXTNnLEe28jPPklIk6cg" name="left"/>
+      <ownedOperation xmi:id="_B6BXTdnLEe28jPPklIk6cg" name="rightfire"/>
+      <ownedOperation xmi:id="_B6BXTtnLEe28jPPklIk6cg" name="leftfire"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BXT9nLEe28jPPklIk6cg" memberEnd="_B6BXOdnLEe28jPPklIk6cg _B6BXUNnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BXUNnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BXONnLEe28jPPklIk6cg" association="_B6BXT9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXUdnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXUtnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BXU9nLEe28jPPklIk6cg" memberEnd="_B6BXPNnLEe28jPPklIk6cg _B6BXVNnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BXVNnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BXONnLEe28jPPklIk6cg" association="_B6BXU9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXVdnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXVtnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BXV9nLEe28jPPklIk6cg" memberEnd="_B6BXP9nLEe28jPPklIk6cg _B6BXWNnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BXWNnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BXONnLEe28jPPklIk6cg" association="_B6BXV9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXWdnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXWtnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BXW9nLEe28jPPklIk6cg" memberEnd="_B6BXQtnLEe28jPPklIk6cg _B6BXXNnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BXXNnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BXONnLEe28jPPklIk6cg" association="_B6BXW9nLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BXXdnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BXXtnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_B6BXX9nLEe28jPPklIk6cg" name="Flappy-bird-touch-15th-pipe">
+      <ownedRule xmi:id="_B6BXYNnLEe28jPPklIk6cg" name="const" constrainedElement="_B6BXZNnLEe28jPPklIk6cg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXYdnLEe28jPPklIk6cg">
+          <language>OCL</language>
+          <body>self.</body>
+        </specification>
+      </ownedRule>
+      <region xmi:id="_B6BXYtnLEe28jPPklIk6cg" name="Region1">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_B6BXY9nLEe28jPPklIk6cg"/>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXZNnLEe28jPPklIk6cg" name="bird-inline-with-gap-before-15th-pipe">
+          <eAnnotations xmi:id="_B6BXZdnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXZtnLEe28jPPklIk6cg" key="good"/>
+          </eAnnotations>
+          <ownedRule xmi:id="_B6BXZ9nLEe28jPPklIk6cg" name="state-invariant" constrainedElement="_B6BXZNnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXaNnLEe28jPPklIk6cg">
+              <language></language>
+              <body>(birdY > topPipeY) and (birdY &lt; bottomPipeY)</body>
+            </specification>
+          </ownedRule>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXadnLEe28jPPklIk6cg" name="bird-inline-with-top-pipe">
+          <eAnnotations xmi:id="_B6BXatnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXa9nLEe28jPPklIk6cg" key="bad"/>
+          </eAnnotations>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXbNnLEe28jPPklIk6cg" name="bird-inline-with-bottom-pipe">
+          <eAnnotations xmi:id="_B6BXbdnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXbtnLEe28jPPklIk6cg" key="bad"/>
+          </eAnnotations>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXb9nLEe28jPPklIk6cg" name="bird-touch-top-border">
+          <eAnnotations xmi:id="_B6BXcNnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXcdnLEe28jPPklIk6cg" key="dead"/>
+          </eAnnotations>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXctnLEe28jPPklIk6cg" name="bird-touch-bottom-pipe">
+          <eAnnotations xmi:id="_B6BXc9nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXdNnLEe28jPPklIk6cg" key="dead"/>
+          </eAnnotations>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXddnLEe28jPPklIk6cg" name="bird-touch-top-pipe">
+          <eAnnotations xmi:id="_B6BXdtnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXd9nLEe28jPPklIk6cg" key="dead"/>
+          </eAnnotations>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXeNnLEe28jPPklIk6cg" name="bird-touch-bottom-border">
+          <eAnnotations xmi:id="_B6BXednLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXetnLEe28jPPklIk6cg" key="dead"/>
+          </eAnnotations>
+        </subvertex>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_B6BXe9nLEe28jPPklIk6cg" kind="choice"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_B6BXfNnLEe28jPPklIk6cg"/>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXfdnLEe28jPPklIk6cg" name="bird-inline-with-15th-top-pipe">
+          <eAnnotations xmi:id="_B6BXftnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXf9nLEe28jPPklIk6cg" key="good"/>
+          </eAnnotations>
+          <ownedRule xmi:id="_B6BXgNnLEe28jPPklIk6cg" name="state-invariant-15" constrainedElement="_B6BXfdnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXgdnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt; (topPipeY + 100) &amp;&amp; score == 14</body>
+            </specification>
+          </ownedRule>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXgtnLEe28jPPklIk6cg" name="bird-inline-with-15th-gap">
+          <eAnnotations xmi:id="_B6BXg9nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_B6BXhNnLEe28jPPklIk6cg" key="bad"/>
+          </eAnnotations>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_B6BXhdnLEe28jPPklIk6cg" name="bird-touch-top-pipe-15th-onwards">
+          <eAnnotations xmi:id="_B6BXhtnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        </subvertex>
+        <transition xmi:id="_B6BXh9nLEe28jPPklIk6cg" source="_B6BXY9nLEe28jPPklIk6cg" target="_B6BXe9nLEe28jPPklIk6cg"/>
+        <transition xmi:id="_B6BXiNnLEe28jPPklIk6cg" source="_B6BXe9nLEe28jPPklIk6cg" target="_B6BXadnLEe28jPPklIk6cg" guard="_B6BXidnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXidnLEe28jPPklIk6cg" constrainedElement="_B6BXiNnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXitnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt; (topPipeY + 20)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXi9nLEe28jPPklIk6cg" source="_B6BXe9nLEe28jPPklIk6cg" target="_B6BXZNnLEe28jPPklIk6cg" guard="_B6BXjNnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXjNnLEe28jPPklIk6cg" constrainedElement="_B6BXi9nLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXjdnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY > topPipeY &amp;&amp; birdY &lt; bottomPipeY</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXjtnLEe28jPPklIk6cg" source="_B6BXe9nLEe28jPPklIk6cg" target="_B6BXbNnLEe28jPPklIk6cg" guard="_B6BXj9nLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXj9nLEe28jPPklIk6cg" constrainedElement="_B6BXjtnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXkNnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdy > bottomPipeY</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXkdnLEe28jPPklIk6cg" name="doNothing()" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXZNnLEe28jPPklIk6cg" guard="_B6BXktnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXktnLEe28jPPklIk6cg" constrainedElement="_B6BXkdnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXk9nLEe28jPPklIk6cg">
+              <language>Analysis</language>
+              <body>birdY &lt; (bottomPipeY - 30)  &amp;&amp; score &lt; 14</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXlNnLEe28jPPklIk6cg" name="flap()" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXZNnLEe28jPPklIk6cg" guard="_B6BXldnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXldnLEe28jPPklIk6cg" constrainedElement="_B6BXlNnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXltnLEe28jPPklIk6cg">
+              <language>Analysis</language>
+              <body>birdY >= (bottomPipeY - 30)  &amp;&amp; score &lt; 14</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXl9nLEe28jPPklIk6cg" name="flap()" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXadnLEe28jPPklIk6cg" guard="_B6BXmNnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXmNnLEe28jPPklIk6cg" constrainedElement="_B6BXl9nLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXmdnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt; (topPipeY + 100)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXmtnLEe28jPPklIk6cg" name="doNothing()" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXbNnLEe28jPPklIk6cg" guard="_B6BXm9nLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXm9nLEe28jPPklIk6cg" constrainedElement="_B6BXmtnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXnNnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY >= (bottomPipeY - 30)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXndnLEe28jPPklIk6cg" name="flap()" source="_B6BXadnLEe28jPPklIk6cg" target="_B6BXb9nLEe28jPPklIk6cg" guard="_B6BXntnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXntnLEe28jPPklIk6cg" constrainedElement="_B6BXndnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXn9nLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt;= 50</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXoNnLEe28jPPklIk6cg" name="flap()" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXb9nLEe28jPPklIk6cg" guard="_B6BXodnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXodnLEe28jPPklIk6cg" constrainedElement="_B6BXoNnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXotnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt;= 50</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXo9nLEe28jPPklIk6cg" name="doNothing()" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXeNnLEe28jPPklIk6cg" guard="_B6BXpNnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXpNnLEe28jPPklIk6cg" constrainedElement="_B6BXo9nLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXpdnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY >= 700</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXptnLEe28jPPklIk6cg" name="doNothing()" source="_B6BXbNnLEe28jPPklIk6cg" target="_B6BXeNnLEe28jPPklIk6cg" guard="_B6BXp9nLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXp9nLEe28jPPklIk6cg" constrainedElement="_B6BXptnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXqNnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY >= 700</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXqdnLEe28jPPklIk6cg" name="flap()" source="_B6BXbNnLEe28jPPklIk6cg" target="_B6BXZNnLEe28jPPklIk6cg" guard="_B6BXqtnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXqtnLEe28jPPklIk6cg" constrainedElement="_B6BXqdnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXq9nLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY > topPipeY &amp;&amp; birdY &lt; bottomPipeY  &amp;&amp; score &lt; 14</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXrNnLEe28jPPklIk6cg" name="doNothing()" source="_B6BXadnLEe28jPPklIk6cg" target="_B6BXZNnLEe28jPPklIk6cg" guard="_B6BXrdnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXrdnLEe28jPPklIk6cg" constrainedElement="_B6BXrNnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXrtnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY > topPipeY &amp;&amp; birdY &lt; bottomPipeY &amp;&amp; score &lt; 14</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXr9nLEe28jPPklIk6cg" name="flap()" source="_B6BXadnLEe28jPPklIk6cg" target="_B6BXadnLEe28jPPklIk6cg" guard="_B6BXsNnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXsNnLEe28jPPklIk6cg" constrainedElement="_B6BXr9nLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXsdnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt; (topPipeY + 100)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXstnLEe28jPPklIk6cg" source="_B6BXadnLEe28jPPklIk6cg" target="_B6BXddnLEe28jPPklIk6cg" guard="_B6BXs9nLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXs9nLEe28jPPklIk6cg" constrainedElement="_B6BXstnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXtNnLEe28jPPklIk6cg">
+              <language>Analysis</language>
+              <body>(birdX >= (topPipeX - 10) &amp;&amp; birdX &lt;= (topPipeX + 100) ) &amp;&amp; (birdY &lt;= topPipeY + 50)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXtdnLEe28jPPklIk6cg" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXddnLEe28jPPklIk6cg" guard="_B6BXttnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXttnLEe28jPPklIk6cg" constrainedElement="_B6BXtdnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXt9nLEe28jPPklIk6cg">
+              <language>Analysis</language>
+              <body>(birdX >= (topPipeX - 10) &amp;&amp; birdX &lt;= (topPipeX + 100) ) &amp;&amp; (birdY &lt;= topPipeY + 50)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXuNnLEe28jPPklIk6cg" source="_B6BXbNnLEe28jPPklIk6cg" target="_B6BXctnLEe28jPPklIk6cg" guard="_B6BXudnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXudnLEe28jPPklIk6cg" constrainedElement="_B6BXuNnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXutnLEe28jPPklIk6cg">
+              <language>Analysis</language>
+              <body>(birdX >= (bottomPipeX - 10) &amp;&amp; birdX &lt;= (bottomPipeX + 100) ) &amp;&amp; (birdY >= bottomPipeY + 5)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXu9nLEe28jPPklIk6cg" source="_B6BXZNnLEe28jPPklIk6cg" target="_B6BXctnLEe28jPPklIk6cg" guard="_B6BXvNnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXvNnLEe28jPPklIk6cg" constrainedElement="_B6BXu9nLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXvdnLEe28jPPklIk6cg">
+              <language>Analysis</language>
+              <body>(birdX >= (bottomPipeX - 10) &amp;&amp; birdX &lt;= (bottomPipeX + 100) ) &amp;&amp; (birdY >= bottomPipeY + 5)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXvtnLEe28jPPklIk6cg" source="_B6BXddnLEe28jPPklIk6cg" target="_B6BXfNnLEe28jPPklIk6cg"/>
+        <transition xmi:id="_B6BXv9nLEe28jPPklIk6cg" source="_B6BXb9nLEe28jPPklIk6cg" target="_B6BXfNnLEe28jPPklIk6cg"/>
+        <transition xmi:id="_B6BXwNnLEe28jPPklIk6cg" source="_B6BXctnLEe28jPPklIk6cg" target="_B6BXfNnLEe28jPPklIk6cg"/>
+        <transition xmi:id="_B6BXwdnLEe28jPPklIk6cg" source="_B6BXeNnLEe28jPPklIk6cg" target="_B6BXfNnLEe28jPPklIk6cg"/>
+        <transition xmi:id="_B6BXwtnLEe28jPPklIk6cg" name="doNothing()" source="_B6BXadnLEe28jPPklIk6cg" target="_B6BXadnLEe28jPPklIk6cg" guard="_B6BXw9nLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXw9nLEe28jPPklIk6cg" constrainedElement="_B6BXwtnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXxNnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt; (topPipeY + 100)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXxdnLEe28jPPklIk6cg" name="doNothing()" source="_B6BXbNnLEe28jPPklIk6cg" target="_B6BXbNnLEe28jPPklIk6cg" guard="_B6BXxtnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXxtnLEe28jPPklIk6cg" constrainedElement="_B6BXxdnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXx9nLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY >= (bottomPipeY - 30)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXyNnLEe28jPPklIk6cg" name="flap()" source="_B6BXbNnLEe28jPPklIk6cg" target="_B6BXbNnLEe28jPPklIk6cg" guard="_B6BXydnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXydnLEe28jPPklIk6cg" constrainedElement="_B6BXyNnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXytnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY >= (bottomPipeY - 30)</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXy9nLEe28jPPklIk6cg" name="doNothing()" source="_B6BXfdnLEe28jPPklIk6cg" target="_B6BXfdnLEe28jPPklIk6cg" guard="_B6BXzNnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXzNnLEe28jPPklIk6cg" constrainedElement="_B6BXy9nLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BXzdnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt; (topPipeY + 100) &amp;&amp; score == 14</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BXztnLEe28jPPklIk6cg" name="flap()" source="_B6BXfdnLEe28jPPklIk6cg" target="_B6BXfdnLEe28jPPklIk6cg" guard="_B6BXz9nLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BXz9nLEe28jPPklIk6cg" constrainedElement="_B6BXztnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BX0NnLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt; (topPipeY + 100) &amp;&amp; score == 14</body>
+            </specification>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_B6BX0dnLEe28jPPklIk6cg" name="flap()" source="_B6BXfdnLEe28jPPklIk6cg" target="_B6BXb9nLEe28jPPklIk6cg" guard="_B6BX0tnLEe28jPPklIk6cg">
+          <ownedRule xmi:id="_B6BX0tnLEe28jPPklIk6cg" constrainedElement="_B6BX0dnLEe28jPPklIk6cg">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_B6BX09nLEe28jPPklIk6cg">
+              <language></language>
+              <body>birdY &lt;= 50</body>
+            </specification>
+          </ownedRule>
+        </transition>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BX1NnLEe28jPPklIk6cg" name="Wall"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BX1dnLEe28jPPklIk6cg" name="Human">
+      <ownedOperation xmi:id="_B6BX1tnLEe28jPPklIk6cg" name="noop"/>
+      <ownedOperation xmi:id="_B6BX19nLEe28jPPklIk6cg" name="fire"/>
+      <ownedOperation xmi:id="_B6BX2NnLEe28jPPklIk6cg" name="up"/>
+      <ownedOperation xmi:id="_B6BX2dnLEe28jPPklIk6cg" name="right"/>
+      <ownedOperation xmi:id="_B6BX2tnLEe28jPPklIk6cg" name="left"/>
+      <ownedOperation xmi:id="_B6BX29nLEe28jPPklIk6cg" name="down"/>
+      <ownedOperation xmi:id="_B6BX3NnLEe28jPPklIk6cg" name="upright"/>
+      <ownedOperation xmi:id="_B6BX3dnLEe28jPPklIk6cg" name="upleft"/>
+      <ownedOperation xmi:id="_B6BX3tnLEe28jPPklIk6cg" name="downright"/>
+      <ownedOperation xmi:id="_B6BX39nLEe28jPPklIk6cg" name="downleft"/>
+      <ownedOperation xmi:id="_B6BX4NnLEe28jPPklIk6cg" name="upfire"/>
+      <ownedOperation xmi:id="_B6BX4dnLEe28jPPklIk6cg" name="rightfire"/>
+      <ownedOperation xmi:id="_B6BX4tnLEe28jPPklIk6cg" name="leftfire"/>
+      <ownedOperation xmi:id="_B6BX49nLEe28jPPklIk6cg" name="downfire"/>
+      <ownedOperation xmi:id="_B6BX5NnLEe28jPPklIk6cg" name="uprightfire"/>
+      <ownedOperation xmi:id="_B6BX5dnLEe28jPPklIk6cg" name="upleftfire"/>
+      <ownedOperation xmi:id="_B6BX5tnLEe28jPPklIk6cg" name="downrightfire"/>
+      <ownedOperation xmi:id="_B6BX59nLEe28jPPklIk6cg" name="downleftfire"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BX6NnLEe28jPPklIk6cg" name="AtariAlienGame">
+      <ownedAttribute xmi:id="_B6BX6dnLEe28jPPklIk6cg" name="alienEgg" visibility="private" type="_B6BX-NnLEe28jPPklIk6cg" association="_B6BYDdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BX6tnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BX69nLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BX7NnLEe28jPPklIk6cg" name="alienEggs" visibility="private" type="_B6BX-NnLEe28jPPklIk6cg" isUnique="false" association="_B6BYAdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BX7dnLEe28jPPklIk6cg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BX7tnLEe28jPPklIk6cg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BX79nLEe28jPPklIk6cg" name="aliens" visibility="private" type="_B6BX_NnLEe28jPPklIk6cg" association="_B6BYBdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BX8NnLEe28jPPklIk6cg" value="3"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BX8dnLEe28jPPklIk6cg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BX8tnLEe28jPPklIk6cg" name="wall" visibility="private" type="_B6BX1NnLEe28jPPklIk6cg" association="_B6BYCdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BX89nLEe28jPPklIk6cg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BX9NnLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B6BX9dnLEe28jPPklIk6cg" name="human" visibility="private" type="_B6BX1dnLEe28jPPklIk6cg" association="_B6BX_dnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BX9tnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BX99nLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BX-NnLEe28jPPklIk6cg" name="AlienEgg">
+      <ownedAttribute xmi:id="_B6BX-dnLEe28jPPklIk6cg" name="atariAlienGame" visibility="private" type="_B6BX6NnLEe28jPPklIk6cg" association="_B6BYDdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BX-tnLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BX-9nLEe28jPPklIk6cg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B6BX_NnLEe28jPPklIk6cg" name="Alien"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BX_dnLEe28jPPklIk6cg" memberEnd="_B6BX9dnLEe28jPPklIk6cg _B6BX_tnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BX_tnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BX6NnLEe28jPPklIk6cg" association="_B6BX_dnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BX_9nLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BYANnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BYAdnLEe28jPPklIk6cg" memberEnd="_B6BX7NnLEe28jPPklIk6cg _B6BYAtnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BYAtnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BX6NnLEe28jPPklIk6cg" association="_B6BYAdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BYA9nLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BYBNnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BYBdnLEe28jPPklIk6cg" memberEnd="_B6BX79nLEe28jPPklIk6cg _B6BYBtnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BYBtnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BX6NnLEe28jPPklIk6cg" association="_B6BYBdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BYB9nLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BYCNnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BYCdnLEe28jPPklIk6cg" memberEnd="_B6BX8tnLEe28jPPklIk6cg _B6BYCtnLEe28jPPklIk6cg">
+      <ownedEnd xmi:id="_B6BYCtnLEe28jPPklIk6cg" name="" visibility="private" type="_B6BX6NnLEe28jPPklIk6cg" association="_B6BYCdnLEe28jPPklIk6cg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6BYC9nLEe28jPPklIk6cg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6BYDNnLEe28jPPklIk6cg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_B6BYDdnLEe28jPPklIk6cg" memberEnd="_B6BX6dnLEe28jPPklIk6cg _B6BX-dnLEe28jPPklIk6cg"/>
+    <profileApplication xmi:id="_B6BYDtnLEe28jPPklIk6cg">
+      <eAnnotations xmi:id="_B6BYD9nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_B6BYENnLEe28jPPklIk6cg">
+      <eAnnotations xmi:id="_B6BYEdnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Default.profile.uml#_B6B-O9nLEe28jPPklIk6cg"/>
+      </eAnnotations>
+      <appliedProfile href="Default.profile.uml#_B6B-OdnLEe28jPPklIk6cg"/>
+    </profileApplication>
+    <profileApplication xmi:id="_B6BYEtnLEe28jPPklIk6cg">
+      <eAnnotations xmi:id="_B6BYE9nLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Deployment.profile.uml#_B6CmMNnLEe28jPPklIk6cg"/>
+      </eAnnotations>
+      <appliedProfile href="Deployment.profile.uml#_B6CmLtnLEe28jPPklIk6cg"/>
+    </profileApplication>
+    <profileApplication xmi:id="_B6BYFNnLEe28jPPklIk6cg">
+      <eAnnotations xmi:id="_B6BYFdnLEe28jPPklIk6cg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/resource/flappy/Profile.profile.uml#_VripGFxGEeqWd6JKSWS4Jw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/resource/flappy/Profile.profile.uml#_VripFlxGEeqWd6JKSWS4Jw"/>
+    </profileApplication>
+  </uml:Package>
+  <Default:MetaConstraint xmi:id="_B6BYFtnLEe28jPPklIk6cg" base_Constraint="_B6BWxtnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Game xmi:id="_B6BYF9nLEe28jPPklIk6cg" base_Class="_B6BWutnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Avatar xmi:id="_B6BYGNnLEe28jPPklIk6cg" name="flappybird" fileLocation="&quot;assets/bird.png&quot;" base_Class="_B6BXJ9nLEe28jPPklIk6cg" lifecount="1"/>
+  <PlatformGameTestingProfile:DangerousObstacle xmi:id="_B6BYGdnLEe28jPPklIk6cg" name="&quot;dfp&quot;" fileLocation="&quot;assets/downfacepipe.png&quot;" base_Class="_B6BXK9nLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:DangerousObstacle xmi:id="_B6BYGtnLEe28jPPklIk6cg" name="ufp" fileLocation="&quot;assets/downfacepipe.png&quot;" base_Class="_B6BXKtnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYG9nLEe28jPPklIk6cg" key="&quot;space&quot;" timeelapsed="1" base_Operation="_B6BXKNnLEe28jPPklIk6cg" name="&quot;flap&quot;"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYHNnLEe28jPPklIk6cg" key="null" timeelapsed="1" base_Operation="_B6BXKdnLEe28jPPklIk6cg" name="&quot;idle&quot;"/>
+  <PlatformGameTestingProfile:Game xmi:id="_B6BYHdnLEe28jPPklIk6cg" base_Class="_B6BXONnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Enemy xmi:id="_B6BYHtnLEe28jPPklIk6cg" name="invader" fileLocation="spaceinvaders/assets/enemy" base_Class="_B6BXRdnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:BenignObstacle xmi:id="_B6BYH9nLEe28jPPklIk6cg" name="shield" fileLocation="spaceinvaders/assets/shield.png" base_Class="_B6BXRtnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:DangerousObstacle xmi:id="_B6BYINnLEe28jPPklIk6cg" name="invaderfire" fileLocation="spaceinvaders/assets/invaderfire.png" base_Class="_B6BXR9nLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Avatar xmi:id="_B6BYIdnLEe28jPPklIk6cg" name="spaceship" fileLocation="spaceinvaders/assets/avatar.png" base_Class="_B6BXSNnLEe28jPPklIk6cg" lifecount="5"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYItnLEe28jPPklIk6cg" base_Operation="_B6BXSdnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYI9nLEe28jPPklIk6cg" base_Operation="_B6BXStnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYJNnLEe28jPPklIk6cg" base_Operation="_B6BXS9nLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYJdnLEe28jPPklIk6cg" base_Operation="_B6BXTNnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYJtnLEe28jPPklIk6cg" base_Operation="_B6BXTdnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:UserAction xmi:id="_B6BYJ9nLEe28jPPklIk6cg" base_Operation="_B6BXTtnLEe28jPPklIk6cg"/>
+  <Default:MetaConstraint xmi:id="_B6BYKNnLEe28jPPklIk6cg" base_Constraint="_B6BXYNnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Game xmi:id="_B6BYKdnLEe28jPPklIk6cg" base_Class="_B6BX6NnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Avatar xmi:id="_B6BYKtnLEe28jPPklIk6cg" base_Class="_B6BX1dnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:BenignObstacle xmi:id="_B6BYK9nLEe28jPPklIk6cg" base_Class="_B6BX1NnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Enemy xmi:id="_B6BYLNnLEe28jPPklIk6cg" base_Class="_B6BX_NnLEe28jPPklIk6cg"/>
+  <PlatformGameTestingProfile:Collectable xmi:id="_B6BYLdnLEe28jPPklIk6cg" base_Class="_B6BX-NnLEe28jPPklIk6cg"/>
+</xmi:XMI>

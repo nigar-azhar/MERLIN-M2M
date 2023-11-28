@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_re2D11hVEeq1_og-BixoVw" name="MBT_assignment02">
+  <packageImport xmi:id="_re2D2FhVEeq1_og-BixoVw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_re2D2VhVEeq1_og-BixoVw" name="Class1">
+    <ownedAttribute xmi:id="_re2D2lhVEeq1_og-BixoVw" name="a1" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_re2D21hVEeq1_og-BixoVw" name="a3" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_re2D3FhVEeq1_og-BixoVw" name="a2" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_re2D3VhVEeq1_og-BixoVw" name="SM">
+      <region xmi:id="_re2D3lhVEeq1_og-BixoVw" name="Region1">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_re2D31hVEeq1_og-BixoVw" name="init1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_re2D4FhVEeq1_og-BixoVw" name="S1">
+          <ownedRule xmi:id="_re2D4VhVEeq1_og-BixoVw" name="s1_inv" constrainedElement="_re2D4FhVEeq1_og-BixoVw">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_re2D4lhVEeq1_og-BixoVw">
+              <language></language>
+              <body>a1 == 0 &amp;&amp; a2 == 0 &amp;&amp; a3 ==''</body>
+            </specification>
+          </ownedRule>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_re2D41hVEeq1_og-BixoVw" name="S2">
+          <ownedRule xmi:id="_re2D5FhVEeq1_og-BixoVw" name="s2i_inv" constrainedElement="_re2D41hVEeq1_og-BixoVw">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_re2D5VhVEeq1_og-BixoVw">
+              <language></language>
+              <body>a1 > 0 &amp;&amp; a2 == 2 &amp;&amp; a3 =='s2'</body>
+            </specification>
+          </ownedRule>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_re2D5lhVEeq1_og-BixoVw" name="S3">
+          <ownedRule xmi:id="_re2D51hVEeq1_og-BixoVw" name="s3_inv" constrainedElement="_re2D5lhVEeq1_og-BixoVw">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_re2D6FhVEeq1_og-BixoVw">
+              <language></language>
+              <body>a1 &lt; 0 &amp;&amp; a2 &lt; 0 &amp;&amp; a3 =='s3'</body>
+            </specification>
+          </ownedRule>
+        </subvertex>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_re2D6VhVEeq1_og-BixoVw" name="final1"/>
+        <transition xmi:id="_re2D6lhVEeq1_og-BixoVw" name="construct" source="_re2D31hVEeq1_og-BixoVw" target="_re2D4FhVEeq1_og-BixoVw"/>
+        <transition xmi:id="_re2D61hVEeq1_og-BixoVw" name="o1" source="_re2D4FhVEeq1_og-BixoVw" target="_re2D41hVEeq1_og-BixoVw">
+          <trigger xmi:id="_re2D7FhVEeq1_og-BixoVw" name="t1" event="_re2D-FhVEeq1_og-BixoVw"/>
+        </transition>
+        <transition xmi:id="_re2D7VhVEeq1_og-BixoVw" name="o2" source="_re2D41hVEeq1_og-BixoVw" target="_re2D41hVEeq1_og-BixoVw">
+          <trigger xmi:id="_re2D7lhVEeq1_og-BixoVw" name="" event="_re2D-VhVEeq1_og-BixoVw"/>
+        </transition>
+        <transition xmi:id="_re2D71hVEeq1_og-BixoVw" name="o3" source="_re2D41hVEeq1_og-BixoVw" target="_re2D5lhVEeq1_og-BixoVw">
+          <trigger xmi:id="_re2D8FhVEeq1_og-BixoVw" name="" event="_re2D-lhVEeq1_og-BixoVw"/>
+        </transition>
+        <transition xmi:id="_re2D8VhVEeq1_og-BixoVw" name="destruct" source="_re2D5lhVEeq1_og-BixoVw" target="_re2D6VhVEeq1_og-BixoVw"/>
+        <transition xmi:id="_re2D8lhVEeq1_og-BixoVw" name="o4" source="_re2D5lhVEeq1_og-BixoVw" target="_re2D5lhVEeq1_og-BixoVw">
+          <trigger xmi:id="_re2D81hVEeq1_og-BixoVw" name="" event="_re2D-1hVEeq1_og-BixoVw"/>
+        </transition>
+      </region>
+    </ownedBehavior>
+    <ownedOperation xmi:id="_re2D9FhVEeq1_og-BixoVw" name="o1"/>
+    <ownedOperation xmi:id="_re2D9VhVEeq1_og-BixoVw" name="o2"/>
+    <ownedOperation xmi:id="_re2D9lhVEeq1_og-BixoVw" name="o3"/>
+    <ownedOperation xmi:id="_re2D91hVEeq1_og-BixoVw" name="o4"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_re2D-FhVEeq1_og-BixoVw" name="" operation="_re2D9FhVEeq1_og-BixoVw"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_re2D-VhVEeq1_og-BixoVw" name="" operation="_re2D9VhVEeq1_og-BixoVw"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_re2D-lhVEeq1_og-BixoVw" name="" operation="_re2D9lhVEeq1_og-BixoVw"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_re2D-1hVEeq1_og-BixoVw" name="" operation="_re2D91hVEeq1_og-BixoVw"/>
+  <profileApplication xmi:id="_re2D_FhVEeq1_og-BixoVw">
+    <eAnnotations xmi:id="_re2D_VhVEeq1_og-BixoVw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+</uml:Package>
