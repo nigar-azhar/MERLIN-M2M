@@ -27,4 +27,4 @@ The transformation process will generate an XML file in the project directory. T
 
 ## Contact
 
-For questions or support, please contact [nigar.azhar@questlab.pk].
+For questions or support, please contact [nigar.azhar@nu.edu.pk].
